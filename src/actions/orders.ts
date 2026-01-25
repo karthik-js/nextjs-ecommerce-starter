@@ -6,7 +6,7 @@ export async function placeOrder(
   items: OrderItem[],
   subtotal: number,
   tax: number,
-  total: number
+  total: number,
 ): Promise<{ success: boolean; orderNumber?: string; error?: string }> {
   try {
     if (items.length === 0) {
