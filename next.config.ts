@@ -12,13 +12,6 @@ const nextConfig: NextConfig = {
   },
   cacheComponents: true,
   reactCompiler: true,
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
-    incomingRequests: true,
-    browserToTerminal: true,
-  },
   reactStrictMode: true,
   typedRoutes: true,
   experimental: {

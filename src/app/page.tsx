@@ -2,11 +2,16 @@ import Link from "next/link";
 import { getProducts } from "@/lib/db";
 import ProductCard from "@/components/ProductCard";
 import NewsletterForm from "@/components/client/NewsletterForm";
+import { cookies } from "next/headers";
 
 // This is a Server Component - fetches data from database
-export default function Home() {
+export default async function Home() {
   const products = getProducts();
   const featuredProducts = products.slice(0, 4);
+
+  const cookieStore = await cookies();
+
+  console.log("Cookies on Home Page:", cookieStore.getAll());
 
   return (
     <div className="min-h-screen">
